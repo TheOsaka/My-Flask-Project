@@ -15,7 +15,7 @@ Resources:
   WebServerSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupDescription: Enable HTTP for Apache Web Server and SSH for secure connection
+      GroupDescription: Enable HTTP for Apache Web Server and SSH for secure connection.
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 80
@@ -25,11 +25,11 @@ Resources:
           FromPort: 22
           ToPort: 22
           CidrIp: 0.0.0.0/0
-  
+
   WebServerHost:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-06878d265978313ca
+      ImageId: ami-0b5eea76982371e91
       InstanceType: t2.micro
       KeyName: first-key
       SecurityGroupIds:
@@ -51,7 +51,7 @@ Resources:
             wget $FOLDER/cat2.jpg
             wget $FOLDER/cat3.png
             systemctl start httpd
-            systemctl enable httpd
+            systemctl enable httpd      
   
 Outputs:
   WebsiteURL:
